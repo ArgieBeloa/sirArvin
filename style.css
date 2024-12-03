@@ -83,14 +83,17 @@ body {
      justify-content: center;
      align-items: center;
      flex-direction: column;
-     row-gap: 0.4rem;
+     row-gap: 0.1rem;
  }
  .userProfile img{
-     width: 40%;
+     width: 38%;
      height: auto;
      background-color: rgb(31, 31, 31);
      padding: 0.3rem;
      border-radius: 50%;
+ }
+ .userProfile h4{
+   display: block;
  }
  
  .menu div{
@@ -144,11 +147,30 @@ aside{
 aside h4{
     display: none;
 }
+
+/* Side menu small */
+
+.userProfile img{
+    width: 95%;
+}
+.userProfile h4, h5{
+    font-size: 9px;
+}
+
 }
 
 /* table */
 @media (min-width: 768px) {
    
+/* Side menu tablet */
+
+.userProfile img{
+    width: 38%;
+}
+.userProfile h4, h5{
+    font-size: 11px;
+}
+
     .header{
         font-size: 20px;
     }
@@ -156,4 +178,12 @@ aside h4{
         height: 92.5vh;
      }
 
+}
+
+/* Laptop */
+@media (min-width: 768px) {
+ 
+    .userProfile h4, h5{
+        font-size: 12px;
+    }
 }
