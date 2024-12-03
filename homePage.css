@@ -1,0 +1,355 @@
+:root{
+    --darkBlue: rgb(37, 100, 182); 
+    --secondaryColor: whitesmoke;
+    --textColor: rgb(0, 0, 0);
+}
+h1,h2,h3,h4,h5,h6{
+    color: var(--textColor);
+}
+.content{
+    
+    /* background-color: var(--bgColor); */
+    background-color: var(--darkBlue);
+    display: flex;
+    flex-direction: column;
+     row-gap: 0.2rem;
+    margin-left: 0.3rem;
+    padding: 0.2rem;
+}
+/* Top search and status */
+.topContainer{
+    margin-top: 0.1rem;
+    width: 100%;
+    height: 8%;
+    /* display: grid; */
+    background-color: var(--secondaryColor);
+    /* grid-template-columns: 2fr 1fr; */
+    /* place-content: center; */
+    color: white;
+    display: flex;
+    align-items: center;
+
+
+    /* margin-left: 0.6rem; */
+    border-radius: 7px;
+    border: 1px solid black;
+    
+}
+#dashboardStatus{
+margin-left: 0.7rem;
+}
+
+
+
+/* Container Info */
+.containerInfo{
+    width: 100%;
+    /* background-color: var(--bgColor); */
+    height: 20%;
+    /* display: grid;
+    column-gap: 0.7rem;
+    grid-template-columns: repeat(4, 1fr); */
+    display: flex;
+    background-color: var(--darkBlue);
+}
+.containerInfo .gwaTotalContainer, .eventAndReportContainer, .gwaPercentageContainer, .eventAndReportPercentageContainer{
+width: 25%;
+height: 100%;
+border-radius: 10px;
+background-color: var(--secondaryColor);
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1px solid black;
+column-gap: 0.5rem;
+
+}
+span{
+    font-size: 13px;
+}
+
+.gwaTotalContainer .gwaTotal{
+ 
+ padding: 0.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+/* .gwaStatusPercentageId{
+
+    width: 40%;
+    border-radius: 50%;
+    background-color: aquamarine;
+    height: 100%;
+} */
+
+/* end Container Info */
+
+/* Start schedule, events and grade by subject */
+.student_schedule_event_gradeStatues_container{
+    /* background-color: var(--bgColor); */
+    background-color: var(--darkBlue);
+ 
+    width: 100%;
+    height: 100%;
+    /* display: grid;
+    column-gap: 0.7rem;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    row-gap: 0.5rem;
+    
+    
+   
+}
+
+.student_schedule_event_gradeStatues_container .schedule_Container{
+    background-color: var(--secondaryColor);
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.student_schedule_event_gradeStatues_container .events_and_Grade_Container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    background-color: var(--darkBlue);
+
+}
+.events_and_Grade_Container .event_and_nextClassContainer{
+    width: 100%;
+    height: 70%;
+    background-color: var(--darkBlue);
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 0.5rem;
+    
+ 
+}
+.events_and_Grade_Container .event_and_nextClassContainer div{
+    /* width: 100%;
+    height: 150px;
+    background-color: var(--secondaryColor);
+    /* background-color: aqua; */
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    border: 1px solid black;
+
+} 
+
+.events_and_Grade_Container .gradeBySubjectContainer{
+   width: 100%;
+   height: 100%;
+   background-color: var(--secondaryColor);
+   border: 1px solid black;
+   border-radius: 10px;
+}
+/* circle Grade percentage Grade Total*/
+.circle {
+
+    width: 50%;
+    height: 80%;
+    border-radius: 50%;
+    background: conic-gradient(var(--darkBlue) 70%, #d3d3d3 0);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.circle-percentage {
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    position: absolute;
+
+}
+.eventAndReportPercentageContainer .circle  {
+    width: 90%;
+    height: 80%;
+ 
+}
+.eventAndReportPercentageContainer .circle-percentage {
+    width: 60%;
+    height: 60%;
+ 
+}
+
+/* media query */
+
+/* small */
+@media screen and (min-width: 320px) {
+
+ span{
+    font-size: 8px;
+ }
+ 
+ /* header changes */
+  .content{
+    width: 90%;
+    font-size: 12px;
+ }
+ .containerInfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+   height: 60%;
+  gap: 0.1rem;
+ }
+
+ .containerInfo .gwaTotalContainer, .eventAndReportContainer, .gwaPercentageContainer, .eventAndReportPercentageContainer{
+    width: 90%;
+    height: 50%;
+   font-size: 12px;
+
+ }
+ .containerInfo .gwaTotalContainer{
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+ }
+ .containerInfo .eventAndReportContainer{
+    width: 100%;
+    height: 100%;
+ }
+    .containerInfo .gwaPercentageContainer{
+    padding: 0.6rem;
+    font-size: 0.9rem;
+        line-height: 1.5;
+        width: 100%;
+        height: 100%;
+    }
+    .containerInfo .gwaPercentageContainer  .circle {
+    width: 80%;
+    height: 90%;
+    }
+    .containerInfo .gwaPercentageContainer  .circle-percentage {
+        font-size: 10px;
+    }
+
+    .containerInfo .eventAndReportPercentageContainer{
+    font-size: 0.5rem;
+    padding: 0.2rem;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .containerInfo.eventAndReportPercentageContainer .circle  {
+        width: 50%;
+        height: 80%;
+    
+    }
+
+    .containerInfo .eventAndReportPercentageContainer .circle-percentage {
+        font-size: 10px;
+        width: 60%;
+        height: 60%;
+    
+    }
+    .containerInfo img{
+    
+        width: 20px;
+    }
+}
+/* Start schedule, events and grade by subject */
+
+
+
+
+
+
+
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  
+    h1 {
+        font-size: 40px;
+    }
+    .container{
+        grid-template-columns: 0.5fr 1fr;
+    }
+    .userProfile{
+        width: 100%;
+        height: 30%;
+    }
+    .menu  button h4{
+        display: block;
+    }
+    header{
+        
+        font-size: 17px;
+    }
+    .containerInfo{
+       display: flex;
+       flex-direction: row;
+       height: 30%;
+    }
+    .containerInfo .gwaTotalContainer, .eventAndReportContainer, .gwaPercentageContainer, .eventAndReportPercentageContainer{
+ height: 100%;
+    }
+    /* tablet  */
+    .student_schedule_event_gradeStatues_container{
+      display: grid;
+      column-gap: 0.7rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    .student_schedule_event_gradeStatues_container .schedule_Container{
+        height: 100%;
+    }
+}
+
+/* Laptop */
+@media screen and (min-width: 1024px) {
+    .containerInfo h1{
+    font-size: 45px;
+   }
+   .containerInfo{
+    column-gap: 0.5rem;
+   }
+   .containerInfo .gwaPercentageContainer  .circle {
+   
+    width: 45%;
+    height: 80%;
+ }
+ .containerInfo .gwaPercentageContainer  .circle-percentage {
+    font-size: 14px;
+ }
+ .containerInfo .eventAndReportPercentageContainer{
+    font-size: 14px;
+    padding: 0.7rem;
+ }
+ .containerInfo .eventAndReportPercentageContainer  .circle {
+   
+    width: 50%;
+    height: 80%;
+ }
+ .containerInfo .eventAndReportPercentageContainer .circle-percentage {
+    font-size: 14px;
+ }
+
+
+ .student_schedule_event_gradeStatues_container{
+    column-gap: 0.5rem;
+
+ }
+
+
+
+
+}
