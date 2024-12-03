@@ -189,6 +189,32 @@ span{
  
 }
 
+/* Student Schedule */
+.student_schedule_event_gradeStatues_container .schedule_Container{
+ background-color: aqua;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+}
+
+.student_schedule_event_gradeStatues_container .schedule_Container img{
+display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* media query */
 
 /* small */
@@ -264,8 +290,11 @@ span{
     
         width: 20px;
     }
+    /* Start schedule, events and grade by subject */
+    .student_schedule_event_gradeStatues_container .schedule_Container{
+        /* background-color: aquamarine; */
+    }
 }
-/* Start schedule, events and grade by subject */
 
 
 
