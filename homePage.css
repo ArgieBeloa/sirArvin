@@ -12,8 +12,8 @@ h1,h2,h3,h4,h5,h6{
     background-color: var(--darkBlue);
     display: flex;
     flex-direction: column;
-     row-gap: 0.2rem;
-    margin-left: 0.3rem;
+    row-gap: 0.2rem;
+    /* margin-left: 0.3rem; */
     padding: 0.2rem;
 }
 /* Top search and status */
@@ -145,7 +145,8 @@ span{
 .events_and_Grade_Container .gradeBySubjectContainer{
    width: 100%;
    height: 100%;
-   background-color: var(--secondaryColor);
+   /* background-color: var(--secondaryColor); */
+
    border: 1px solid black;
    border-radius: 10px;
 }
@@ -222,6 +223,26 @@ display: inline;
 .teacher-column { width: 20%; }
 .room-column { width: 12%; }
 
+/* events  */
+.event_and_nextClassContainer .eventContainer h2, .nextClassContainer h2{
+    text-align: center;
+}
+.event_and_nextClassContainer .nextClassContainer .nextClassContainerData{
+    width: 95% ;
+    margin: auto;
+    padding: 0.2rem;
+    border-bottom-left-radius:  0px;
+    border-bottom-right-radius:  0px;
+}
+
+.gradeBySubjectContainer{
+    background-color: aquamarine;
+    background-color: var(--secondaryColor);
+   padding: 0.4rem;
+}
+.gradeBySubjectContainer h2{
+    text-align: center;
+}
 
 
 
@@ -240,6 +261,26 @@ display: inline;
 
 /* small */
 @media screen and (min-width: 320px) {
+    
+    /* events */
+   
+
+
+    /* next class */
+    .event_and_nextClassContainer .nextClassContainer h2{
+    
+        font-size: 14px;
+    }
+    .event_and_nextClassContainer .nextClassContainer .nextClassContainerData{
+        /* background-color: aquamarine; */
+        padding-left: 0.1rem;
+        
+    }
+
+
+
+
+
 
     /* student schedule Changes  Cellphone*/
     .student_schedule_event_gradeStatues_container .schedule_Container{
@@ -331,6 +372,16 @@ display: inline;
     
         width: 20px;
     }
+
+
+    /* event Pin */
+    
+
+  
+      .events_and_Grade_Container .gradeBySubjectContainer{
+        
+          display: none;
+      }
   
    
 } 
@@ -346,7 +397,18 @@ display: inline;
 /* Tablet */
 @media screen and (min-width: 768px) {
   
-     
+
+    /* next class */
+    .event_and_nextClassContainer .nextClassContainer h2{
+    
+        font-size: 16px;
+    }
+
+    .events_and_Grade_Container .gradeBySubjectContainer{
+        
+        display: block;
+    }
+
     /* student schedule Changes tablet*/
     .student_schedule_event_gradeStatues_container .schedule_Container{
         height: 50%;
@@ -468,10 +530,9 @@ display: inline;
     padding: 1.5rem;
 }
 .event_and_nextClassContainer .eventContainer .studentEventTableId {
-    width: 93%;
+    width: 98%;
     height: auto;
-    display: flex;
-    font-size: 10px;
+    display: grid;
     margin: auto;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
@@ -482,8 +543,6 @@ display: inline;
 .event_and_nextClassContainer .eventContainer .studentEventTableId tr{
     font-size: 9px;
 }
-.event_and_nextClassContainer .eventContainer h2{
-    text-align: center;
-}
+
 
 }

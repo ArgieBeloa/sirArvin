@@ -280,35 +280,109 @@ buttonIdNext.addEventListener('click', () => {
       
         // id 
         const tbodyEvents = document.getElementById('studentEventDataId')
-        const windowWidth = window.innerWidth;
-        // example Data 
+        const tbodyNextClass = document.getElementById('studentNextClassDataId')
+     
+        // example Data Pin events
         const studentUpcomingEvents = [
             {Title: "Caprisaa", Date: "Decemeber 9-13 2024"},
             {Title: "Christmas Party", Date: "Decemeber 16 2024"}
         
         ]
+        const studentUpcomingClass = [
+            {Subject: "App Development", Room: "Lab A"}
+    
+        ]
+
+        
 
         //  smartphone
        
       
             
         
-        // add to tbodyEvents
-        tbodyEvents.innerHTML = ''; // Clear current table content
-    
-        studentUpcomingEvents.forEach(row => {
-            const tr = document.createElement('tr');
-
-          
        
-            tr.innerHTML = `
+        
+        // Populate the table and apply dynamic font size
+        function populateTable() {
+            tbodyEvents.innerHTML = ''; // Clear current table content
+        
+            studentUpcomingEvents.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.style.fontSize ="12px"
+                tr.innerHTML = `
+                    <td>${row.Title}</td>
+                    <td>${row.Date}</td>
+                `;
+                tbodyEvents.appendChild(tr);
+            });
+        
+            // Apply the dynamic font size based on the screen width
+   
+        }
+        
+        // Initial population of the table
+        populateTable();
+        
+    //   call the function
+    addDataToNextClass()
+    //    add data to next Class
+    
+    function addDataToNextClass() {
+        tbodyNextClass.innerHTML = ''; // Clear current table content
+        
+            studentUpcomingClass.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.style.fontSize ="12px"
+                tr.innerHTML = `
+                    <td>${row.Subject}</td>
+                    <td>${row.Room}</td>
+                `;
+                tbodyNextClass.appendChild(tr);
+            });
+        
+    }
+      
+    // subject statistic data
+//     const container = document.getElementById("subjectStudentStatusDataId");
+        
+//     container.style.padding = "10px"
+//     // container.style.border = "2px solid black"
 
-                <td>${row.Title}</td>
-                <td>${row.Date}</td>
+//       // Create an h2 element for the subject name
+// const subjectName = document.createElement("h2");
+// subjectName.style.textAlign = "left"
+// subjectName.textContent = "Ethics"; // Replace with the actual subject name
+// container.appendChild(subjectName);
 
-            `;
-            tbodyEvents.appendChild(tr);
-        });
+// // Create a div for the row of numbers
+// const numberRow = document.createElement("div");
+// numberRow.style.display = "flex";
+// numberRow.style.alignItems = "center";
+// numberRow.style.marginTop = "10px";
+
+// // Create the bar on top of the numbers
+// const bar = document.createElement("div");
+// bar.style.marginLeft = "10px"
+// bar.style.width = "30%";
+// bar.style.height = "4px";
+// bar.style.backgroundColor = "black";
+// bar.style.marginBottom = "5px";
+// container.appendChild(bar);
+
+// // Array of numbers
+// const numbers = [5, 4, 3, 2.75, 2.5, 2.25, 2, 1.75, 1.5, 1.25, 1];
+
+// // Add numbers to the row
+// numbers.forEach(number => {
+//     const numberBox = document.createElement("div");
+//     numberBox.textContent = number;
+//     numberBox.style.margin = "0 10px";
+//     numberBox.style.textAlign = "center";
+//     numberRow.appendChild(numberBox);
+// });
+
+// // Append the row to the container
+// container.appendChild(numberRow);
 
 
 
