@@ -1,3 +1,103 @@
+// Change image icon click
+// Button id 
+const homePageButton = document.getElementById('homePageButtonId')
+const scheduleButton = document.getElementById('scheduleButtonId')
+const remaindersButton = document.getElementById('remaindersButtonId')
+const goalsButton = document.getElementById('goalsButtonId')
+const settingsButton = document.getElementById('settingsButtonId')
+
+// image status id
+const imgElementHomePage = document.querySelector('#homePageButtonId img');
+const imgElementSchedule = document.querySelector('#scheduleButtonId img');
+const imgElementRemainders = document.querySelector('#remaindersButtonId img');
+const imgElementGoals = document.querySelector('#goalsButtonId img');
+// const imgElementSettings = document.querySelector('#settingsButtonId img');
+
+
+
+// for changing content dashboard
+const contentDivSelector = '.content';
+
+
+
+
+// click homePage button
+homePageButton.addEventListener('click',()=> {
+   
+    // Load HTML
+    loadHTMLContent('homePage.html', contentDivSelector);
+   
+    imgElementHomePage.src = 'images/home.png'
+    imgElementSchedule.src = 'images/schedule (1).png'
+    imgElementRemainders.scr = 'images/sticky-note (1).png'
+    imgElementGoals.src = 'images/goal (1).png'
+    // imgElementSettings.src = 'images/logout (1).png'
+})
+
+
+// click schedule button
+scheduleButton.addEventListener('click', function () {
+
+    // change icon homePage not fill image
+      imgElementHomePage.src = 'images/home (1).png'
+      imgElementRemainders.src = 'images/sticky-note (1).png'
+      imgElementGoals.src = 'images/goal (1).png'
+    //   imgElementSettings.src = 'images/logout (1).png'
+
+    //   schedule fill icon
+      imgElementSchedule.src = 'images/schedule.png'
+    // Load HTML
+    // loadHTMLContent('schedule.html', contentDivSelector);
+     
+ 
+});
+
+
+// events remaindersButton
+
+remaindersButton.addEventListener('click', ()=>{
+      
+    //change not fill icon rest
+    imgElementHomePage.src = 'images/home (1).png'
+    imgElementSchedule.src = 'images/schedule (1).png'
+    imgElementGoals.src = 'images/goal (1).png'
+    // imgElementSettings.src = 'images/logout (1).png'
+
+      // remainders fill icon
+    imgElementRemainders.src = 'images/sticky-note.png'
+})
+
+// events goals Button
+goalsButton.addEventListener('click', ()=>{
+
+    //changes all icon to not fill
+    imgElementHomePage.src = 'images/home (1).png'
+    imgElementSchedule.src = 'images/schedule (1).png'
+    imgElementRemainders.src = 'images/sticky-note (1).png'
+    // imgElementSettings.src = 'images/logout (1).png'
+
+    // fill Goal icon
+    imgElementGoals.src = 'images/goal.png'
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Function to load HTML content and add event listeners
 function loadHTMLContent(file, targetSelector) {
     fetch(file)
