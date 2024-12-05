@@ -342,48 +342,58 @@ buttonIdNext.addEventListener('click', () => {
         
     }
       
-    // subject statistic data
-//     const container = document.getElementById("subjectStudentStatusDataId");
+    createStudentSubjectStatistic("Ethics", 40)
+    createStudentSubjectStatistic("App Development", 30)
+    createStudentSubjectStatistic("Web Development", 20)
+
+
+    function createStudentSubjectStatistic(subject, barStatus) {
         
-//     container.style.padding = "10px"
-//     // container.style.border = "2px solid black"
+        // subject statistic data
+        const container = document.getElementById("subjectStudentStatusDataId");
+                    
+        container.style.padding = "2%"
+        // container.style.border = "2px solid black"
 
-//       // Create an h2 element for the subject name
-// const subjectName = document.createElement("h2");
-// subjectName.style.textAlign = "left"
-// subjectName.textContent = "Ethics"; // Replace with the actual subject name
-// container.appendChild(subjectName);
+        // Create an h2 element for the subject name
+    const subjectName = document.createElement("h3");
+    subjectName.style.textAlign = "left"
+    subjectName.textContent = subject; // Replace with the actual subject name
+    container.appendChild(subjectName);
 
-// // Create a div for the row of numbers
-// const numberRow = document.createElement("div");
-// numberRow.style.display = "flex";
-// numberRow.style.alignItems = "center";
-// numberRow.style.marginTop = "10px";
+    // Create a div for the row of numbers
+    const numberRow = document.createElement("div");
+    numberRow.style.display = "flex";
+    numberRow.style.alignItems = "center";
+    numberRow.style.marginTop = "2%";
 
-// // Create the bar on top of the numbers
-// const bar = document.createElement("div");
-// bar.style.marginLeft = "10px"
-// bar.style.width = "30%";
-// bar.style.height = "4px";
-// bar.style.backgroundColor = "black";
-// bar.style.marginBottom = "5px";
-// container.appendChild(bar);
+    // Create the bar on top of the numbers
+    const bar = document.createElement("div");
+    bar.style.marginLeft = "2%"
+    bar.style.borderRadius = "5px"
+    bar.style.width = `${barStatus}%`;
+    bar.style.height = "4px";
+    bar.style.backgroundColor = "black";
+    bar.style.marginBottom = "2%";
+    container.appendChild(bar);
 
-// // Array of numbers
-// const numbers = [5, 4, 3, 2.75, 2.5, 2.25, 2, 1.75, 1.5, 1.25, 1];
+    // Array of numbers
+    const numbers = [5, 4, 3, 2.75, 2.5, 2.25, 2, 1.75, 1.5, 1.25, 1];
 
-// // Add numbers to the row
-// numbers.forEach(number => {
-//     const numberBox = document.createElement("div");
-//     numberBox.textContent = number;
-//     numberBox.style.margin = "0 10px";
-//     numberBox.style.textAlign = "center";
-//     numberRow.appendChild(numberBox);
-// });
+    // Add numbers to the row
+    numbers.forEach(number => {
+        const numberBox = document.createElement("div");
+        numberBox.textContent = number;
+        numberBox.style.margin = "0 1.5%";
+        numberBox.style.textAlign = "center";
+        numberRow.appendChild(numberBox);
+    });
 
-// // Append the row to the container
-// container.appendChild(numberRow);
+    // Append the row to the container
+    container.appendChild(numberRow);
 
+    }
+    
 
 
 
