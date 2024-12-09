@@ -1,0 +1,247 @@
+
+:root {
+    --darkBlue: rgb(37, 100, 182);
+    --secondaryColor: whitesmoke;
+    --textColor: rgb(0, 0, 0);
+    --lightgray: rgb(211, 211, 211);
+    --silver: rgb(192, 192, 192);
+    --purple: rgb(105, 53, 156);
+    --green: rgb(0, 163, 119);
+    --yellow: rgb(255, 255, 0);
+    --white: rgb(255, 255, 255);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--textColor);
+}
+
+/* Top Section */
+.topContainer {
+    margin-top: 0.1rem;
+    width: 100%;
+    height: 8%;
+    background-color: var(--secondaryColor);
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0.5rem;
+}
+
+#dashboardStatus {
+    margin-left: 0.7rem;
+}
+
+/* Reminder Info Section */
+.containerInfo {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    background-color: var(--lightgray);
+}
+
+.containerInfo .gwaTotalContainer, .eventAndReportContainer {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.gwaTotalContainer {
+    background-color: var(--darkBlue);
+}
+
+.eventAndReportContainer {
+    background-color: var(--yellow);
+}
+
+.gwaTotalContainer h1 {
+    font-size: 20px;
+}
+
+.eventAndReportContainer h1 {
+    font-size: 20px;
+}
+
+span {
+    font-size: 13px;
+}
+
+.gwaTotalContainer .gwaTotal {
+    padding: 0.3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Reminder Table Section */
+.student_schedule_event_gradeStatues_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    row-gap: 0.5rem;
+}
+
+.student_schedule_event_gradeStatues_container .schedule_Container {
+    background-color: var(--secondaryColor);
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.student_schedule_event_gradeStatues_container .schedule_Container table {
+    font-size: 15px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student_schedule_event_gradeStatues_container .schedule_Container th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.student_schedule_event_gradeStatues_container .schedule_Container tbody tr {
+    height: 20%;
+}
+
+.event_and_Grade_Container {
+    width: 100%;
+    height: 50%;
+    background-color: var(--lightgray);
+}
+
+.event_and_Grade_Container .eventContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event_and_Grade_Container .eventContainer .circle {
+    width: 50%;
+    height: 80%;
+    border-radius: 50%;
+    background: conic-gradient(var(--darkBlue) 80%, #d3d3d3 0);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-percentage {
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    position: absolute;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Media Queries */
+
+/* Small Screens */
+@media screen and (min-width: 320px) {
+    .containerInfo {
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+    }
+
+    .containerInfo .gwaTotalContainer, .eventAndReportContainer {
+        width: 100%;
+        height: 50%;
+        font-size: 12px;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container {
+        height: 50%;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container h2 {
+        font-size: 12px;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container table {
+        font-size: 12px;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container tbody tr {
+        font-size: 10px;
+    }
+
+    .circle-percentage {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+}
+
+/* Tablet Screens */
+@media screen and (min-width: 768px) {
+    .containerInfo {
+        display: flex;
+        flex-direction: row;
+        height: 30%;
+    }
+
+    .containerInfo .gwaTotalContainer, .eventAndReportContainer {
+        width: 45%;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container {
+        height: 50%;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container h2 {
+        font-size: 16px;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container table {
+        font-size: 14px;
+    }
+
+    .circle-percentage {
+        font-size: 18px;
+    }
+}
+
+/* Large Screens */
+@media screen and (min-width: 1024px) {
+    .containerInfo .gwaTotalContainer, .eventAndReportContainer {
+        width: 40%;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container {
+        height: 60%;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container h2 {
+        font-size: 20px;
+    }
+
+    .student_schedule_event_gradeStatues_container .schedule_Container table {
+        font-size: 16px;
+    }
+
+    .circle-percentage {
+        font-size: 22px;
+    }
+}

@@ -2,19 +2,27 @@
     --darkBlue: rgb(37, 100, 182); 
     --secondaryColor: whitesmoke;
     --textColor: rgb(0, 0, 0);
+    --lightgray: rgb(211, 211, 211);
+    --silver: rgb(192,192,192);
+    --purple: rgb(105,53,156);
+    --green: rgb(0,163,119);
+    --yellow: rgb(255,255,0);
+    --white: rgb(255,255,255);
 }
 h1,h2,h3,h4,h5,h6{
     color: var(--textColor);
 }
+
 .content{
     
     /* background-color: var(--bgColor); */
-    background-color: var(--darkBlue);
+    background-color: var(--lightgray);
     display: flex;
     flex-direction: column;
     row-gap: 0.2rem;
-    /* margin-left: 0.3rem; */
+    margin-left: 0.3rem;
     padding: 0.2rem;
+    
 }
 /* Top search and status */
 .topContainer{
@@ -32,7 +40,7 @@ h1,h2,h3,h4,h5,h6{
 
     /* margin-left: 0.6rem; */
     border-radius: 7px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     
 }
 #dashboardStatus{
@@ -50,19 +58,33 @@ margin-left: 0.7rem;
     column-gap: 0.7rem;
     grid-template-columns: repeat(4, 1fr); */
     display: flex;
-    background-color: var(--darkBlue);
+    background-color: var(--lightgray);
 }
 .containerInfo .gwaTotalContainer, .eventAndReportContainer, .gwaPercentageContainer, .eventAndReportPercentageContainer{
 width: 25%;
 height: 100%;
 border-radius: 10px;
-background-color: var(--secondaryColor);
+/* background-color: var(--secondaryColor); */
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1px solid black;
+/* color: var(--white); */
+/* border: 1px solid black; */
 column-gap: 0.5rem;
 
+}
+.gwaTotalContainer{
+    background-color: var(--darkBlue);
+   
+}
+.eventAndReportContainer{
+    background-color: var(--yellow);
+}
+.gwaPercentageContainer{
+    background-color: var(--green);
+}
+.eventAndReportPercentageContainer{
+background-color: var(--purple);
 }
 span{
     font-size: 13px;
@@ -89,7 +111,7 @@ span{
 /* Start schedule, events and grade by subject */
 .student_schedule_event_gradeStatues_container{
     /* background-color: var(--bgColor); */
-    background-color: var(--darkBlue);
+    background-color: var(--lightgray);
  
     width: 100%;
     height: 100%;
@@ -106,11 +128,12 @@ span{
 }
 
 .student_schedule_event_gradeStatues_container .schedule_Container{
-    background-color: var(--secondaryColor);
+    background-color: var(--lightgray);
     width: 100%;
     height: 90%;
     border-radius: 10px;
-    border: 1px solid black;
+    
+    /* border: 1px solid black; */
 }
 .student_schedule_event_gradeStatues_container .events_and_Grade_Container{
     width: 100%;
@@ -118,13 +141,13 @@ span{
     display: flex;
     flex-direction: column;
     row-gap: 0.5rem;
-    background-color: var(--darkBlue);
+    background-color: var(--lightgray);
 
 }
 .events_and_Grade_Container .event_and_nextClassContainer{
     width: 100%;
     height: 70%;
-    background-color: var(--darkBlue);
+    background-color: var(--lightgray);
    display: grid;
    grid-template-columns: 1fr 1fr;
    column-gap: 0.5rem;
@@ -138,7 +161,7 @@ span{
     /* background-color: aqua; */
     background-color: var(--secondaryColor);
     border-radius: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
 } 
 
@@ -147,7 +170,7 @@ span{
    height: 100%;
    /* background-color: var(--secondaryColor); */
 
-   border: 1px solid black;
+   /* border: 1px solid black; */
    border-radius: 10px;
 }
 /* circle Grade percentage Grade Total*/
@@ -485,7 +508,11 @@ display: inline;
  
 
 
-
+    .containerInfo img{
+    /* background-color: aqua; */
+    width: 55px;
+    
+    }
     .containerInfo h1{
     font-size: 45px;
    }
@@ -538,6 +565,7 @@ display: inline;
     border-top-right-radius: 7px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+   
 }
 
 .event_and_nextClassContainer .eventContainer .studentEventTableId tr{

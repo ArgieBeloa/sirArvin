@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form id="signUpForm">
+        <label for="userEmailId">Email:</label>
+        <input type="email" id="userEmailId" required><br><br>
+
+        <label for="userPasswordId">Password:</label>
+        <input type="password" id="userPasswordId" required><br><br>
+
+        <label for="userConfirmPasswordId">Confirm Password:</label>
+        <input type="password" id="userConfirmPasswordId" required><br><br>
+
+        <input type="checkbox" id="policyCheckbox">
+        <label for="policyCheckbox">I agree to the terms and policies</label><br><br>
+
+        <button type="button" id="registerId">Register</button>
+    </form>
+
+    <script>
+        document.getElementById('registerId').addEventListener('click', function () {
+            const email = document.getElementById('userEmailId').value;
+            const password = document.getElementById('userPasswordId').value;
+            const confirmPassword = document.getElementById('userConfirmPasswordId').value;
+            const policyCheckbox = document.getElementById('policyCheckbox');
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please try again.');
+                return;
+            }
+
+            if (!policyCheckbox.checked) {
+                alert('You must agree to the terms and policies to proceed.');
+                return;
+            }
+
+            // If validation passes, submit the form and redirect
+            document.getElementById('signUpForm').submit();
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

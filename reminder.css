@@ -1,0 +1,82 @@
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f4f4f4; */
+    color: #333;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  /* Reminder Card Styles */
+  .reminder-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+  }
+  
+  .reminder h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .reminder p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Buttons */
+  .delete-btn {
+    background: #ff5252;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background: #e04646;
+  }
+  
+  .add-btn {
+    display: block;
+    width: 100%;
+    background: #4caf50;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    transition: background 0.3s;
+  }
+  
+  .add-btn:hover {
+    background: #45a049;
+  }
+  

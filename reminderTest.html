@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="reminderTest.css">
+</head>
+<body>
+
+    <!-- Top Section -->
+    <div class="topContainer">
+        <div id="dashboardStatus">
+            <h3>Reminders</h3>
+        </div>
+        <div>
+            <!-- Placeholder for extra controls if needed -->
+        </div>
+    </div>
+
+    <!-- Reminder Info Section -->
+    <div class="containerInfo">
+        <!-- Reminder Summary -->
+        <div class="gwaTotalContainer">
+            <div class="gwaTotal">
+                <h1 id="reminderTotalId">5<span id="periodId">This Week</span></h1>
+                <h4>Total Reminders</h4>
+                <h6 id="reminderStatusId">+2 since last week</h6>
+            </div>
+            <img src="images/reminder-icon.png" alt="Reminder Icon" width="60" height="60">
+        </div>
+
+        <!-- Priority Reminders -->
+        <div class="eventAndReportContainer">
+            <div class="eventsAndReportTotal">
+                <h1 id="priorityRemindersId">2<span id="priorityPeriodId">High Priority</span></h1>
+                <h4>Important Reminders</h4>
+                <h6 id="priorityStatusId">+1 urgent</h6>
+            </div>
+            <img src="images/priority-icon.png" alt="Priority Icon" width="60" height="60">
+        </div>
+    </div>
+
+    <!-- Reminder Table Section -->
+    <div class="student_schedule_event_gradeStatues_container">
+        <div class="schedule_Container">
+            <h2>Upcoming Reminders</h2>
+            <div id="reminderData">
+                <table style="border: 1px solid black;">
+                    <!-- Table Header -->
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Due Date</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <!-- Table Body -->
+                    <tbody id="reminderTableBody">
+                        <tr>
+                            <td>Submit Project</td>
+                            <td>2024-12-10</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Team Meeting</td>
+                            <td>2024-12-11</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Reminder Statistics -->
+        <div class="events_and_Grade_Container">
+            <div class="eventContainer">
+                <h2>Statistics</h2>
+                <div class="circle">
+                    <div class="circle-percentage" id="reminderCompletion">80%</div>
+                </div>
+                <h4>Completion Rate</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

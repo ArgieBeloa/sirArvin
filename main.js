@@ -47,7 +47,8 @@ scheduleButton.addEventListener('click', function () {
     //   schedule fill icon
       imgElementSchedule.src = 'images/schedule.png'
     // Load HTML
-    // loadHTMLContent('schedule.html', contentDivSelector);
+    loadHTMLContent('scedule.html', contentDivSelector);
+
      
  
 });
@@ -65,6 +66,7 @@ remaindersButton.addEventListener('click', ()=>{
 
       // remainders fill icon
     imgElementRemainders.src = 'images/sticky-note.png'
+    loadHTMLContent('reminder.html', contentDivSelector);
 })
 
 // events goals Button
@@ -78,6 +80,7 @@ goalsButton.addEventListener('click', ()=>{
 
     // fill Goal icon
     imgElementGoals.src = 'images/goal.png'
+    loadHTMLContent('goals.html', contentDivSelector);
 })
 
 
@@ -487,4 +490,3 @@ window.onload = function () {
     loadHTMLContent('homePage.html', '.content');
     
 };
-

@@ -3,9 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 :root{
     --darkBlue: rgb(37, 100, 182); 
+    --white: rgb(255,255,255);
+    --silver: rgb(192,192,192);
+    --royalblue: rgb(162,191,254);
 }
 
 body {
@@ -13,6 +17,7 @@ body {
     line-height: 1.6;
     min-width: 100vw;
     overflow-x: hidden;
+    background-color: lightgray;
 }
 
 /* Container styles */
@@ -24,11 +29,13 @@ body {
 
 /* Header styles */
 .header {
-    background: var(--darkBlue);
-    color: white;
+    /* background: var(--royalblue); */
+    background-color: lightgray;
+     color: black; 
     text-align: center;
  
 }
+
 
 /* Main area styles */
 .main {
@@ -42,14 +49,17 @@ body {
 .content {
     flex: 3;
     background: #f4f4f4;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
 }
 
 /* Sidebar styles */
 .sidebar {
     flex: 1;
-    background: var(--darkBlue);
-    border: 1px solid #ddd;
+    background: var(--white);
+    /* border: 1px solid #ddd; */
+    border-radius: 15px;
+    border-right: 3px solid darkgray;
+    max-width: 80%;
 }
 /* left menu */
 #menu__left{
@@ -58,14 +68,14 @@ body {
      background-color: var(--navyBlue);
      flex-direction: column;
      position: relative;
-     border-left: 2px solid black;
-     border-right: 2px solid black;
+     /* border-left: 2px solid black; */
+     /* border-right: 2px solid black; */
      
  }
  .content{
      width: 100%;
      
-     background-color: #1E293B;
+     /* background-color: #1E293B; */
  }
  .menu {
      display: flex;
@@ -113,12 +123,30 @@ body {
      column-gap: 0.5rem;
     width: 100%;
     height: 100%;
-    /* color: white; */
+    color: white;
     position: relative;
     padding-left: 0.7rem;
     cursor: pointer;
-    border-radius: 15px;
+     /* border-radius: 15px;   */
+     background-color: white; 
+     border: none;
+     outline: none;
+     transition-duration: 0.4ms;
+    
+    
+    
  }
+ .menu button:hover{
+    
+    background-color: lightgray;
+ }
+ .menu button:hover h4{
+   
+  /* background-color: lightgray; */
+    color: blue;
+  
+}
+ 
  .menu.icon{
      width: 30px;
      height:20px;
@@ -172,6 +200,11 @@ aside h4{
 .userProfile h4, h5{
     font-size: 10px;
 }
+.header {
+    text-align: left;
+    margin-left: 26%;
+}
+
 
 }
 
@@ -193,8 +226,10 @@ aside h4{
     font-size: 11px;
 }
 
+
     .header{
         font-size: 20px;
+        text-align: left;
     }
     .main {
         height: 92.5vh;
@@ -203,9 +238,19 @@ aside h4{
 }
 
 /* Laptop */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
  
     .userProfile h4, h5{
         font-size: 12px;
     }
+    .menu button h4{
+        
+        font-size: 14px; 
+        
+    }
+    .header{
+     text-align: left;
+     margin-left: 350px;
+    }
+
 }
