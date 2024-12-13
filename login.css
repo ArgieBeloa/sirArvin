@@ -21,7 +21,7 @@ body::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('images/purisima2\ copy.jpg'), linear-gradient(hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.9));
+  background: url('images/wp1954101.jpg'), linear-gradient(hsla(0, 0%, 0%, 0.9), hsla(0, 23%, 38%, 0.9));
   background-position: center;
   background-size: cover;
   
@@ -32,8 +32,8 @@ body::before {
   border-radius: 8px;
   padding: 30px;
   text-align: center;
-  border: 1px solid #2082bb;
-  backdrop-filter: blur(7px);
+  border: 1px solid #2b2a2a;
+  backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(8px);
 }
 
@@ -45,12 +45,12 @@ form {
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000000;
 }
 
 .input-field {
   position: relative;
-  border-bottom: 2px solid #2082bb;
+  border-bottom: 2px solid #000000;
   margin: 15px 0;
 }
 
@@ -59,7 +59,7 @@ h2 {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
   pointer-events: none;
   transition: 0.15s ease;
@@ -72,7 +72,7 @@ h2 {
   border: none;
   outline: none;
   font-size: 16px;
-  color: #fff;
+  color: #000000;
 }
 
 .input-field input:focus~label,
@@ -87,11 +87,11 @@ h2 {
   align-items: center;
   justify-content: space-between;
   margin: 25px 0 35px 0;
-  color: #fff;
+  color: #000000;
 }
 
 #remember {
-  accent-color: #fff;
+  accent-color: #000000;
 }
 
 .forget label {
@@ -104,7 +104,7 @@ h2 {
 }
 
 .wrapper a {
-  color: #efefef;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -134,5 +134,42 @@ button:hover {
 .register {
   text-align: center;
   margin-top: 30px;
-  color: #fff;
+  color: #000000;
+}
+
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+#popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+#popup button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#popup button:hover {
+  background-color: #0056b3;
 }

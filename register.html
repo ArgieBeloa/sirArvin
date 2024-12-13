@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="register.css">
 </head>
 <body>
+
+  <!-- start -->
   <div class="wrapper">
     <form action="#">
       <h2>Sign Up</h2>
@@ -26,37 +28,168 @@
       <br>
       <label>
         <input type="checkbox" id="policyCheckbox" required>
-        I have read and agree to the <a href="/sirArvinProject/html/policy.html" target="_blank">terms and policies</a>.
+        I have read and agree to the <a href="policy.html" target="_blank">terms and policies</a>.
       </label><br><br>
 
       
       <button type="submit" id="registerId" > Register</button>
       
     </form>
-    <script>
-      document.getElementById('registerId').addEventListener('click', function () {
-          const email = document.getElementById('userEmailId').value;
-          const password = document.getElementById('userPasswordId').value;
-          const confirmPassword = document.getElementById('userConfirmPasswordId').value;
-          const policyCheckbox = document.getElementById('policyCheckbox');
+  </div>
   
-          if (password !== confirmPassword) {
-              alert('Passwords do not match. Please try again.');
-              return;
-          }
-  
-          if (!policyCheckbox.checked) {
-              alert('You must agree to the terms and policies to proceed.');
-              return;
-          }
-  
-          // If validation passes, submit the form and redirect
-          document.getElementById('signUpForm').submit();
-          window.location.href = 'login.html';
-      });
-  </script>
+  <!-- add small info -->
+  <div id="popup">
+    <p>Successfull registers!</p>
+    <button id="successLoginId">Proceed to Login Page</button>
   </div>
   
   
+  <!-- start -->
+
+
+  <!-- add JS -->
+   <script>
+      const buttonRegister = document.getElementById('registerId')
+      //const popUpId = document.getElementById('popup')
+
+      // user input id
+      // username validation
+      let userInputUsername = document.getElementById('userEmailId')
+
+      // password validation
+      let userInputPasswordFirst = document.getElementById('userPasswordId')
+      let userInputPasswordConfirm = document.getElementById('userConfirmPasswordId')
+
+      // checkbox validation
+      const checkBox = document.getElementById('policyCheckbox')
+
+      let usernameCloud
+      let usernameCloudPass
+
+
+
+
+      buttonRegister.addEventListener('click', ()=>{
+           
+          let registerStatusUsername = false
+          let registerStatusPassword = false
+          let registerStatusCheckBox = false
+
+         //  check if user input user name and user is minimum is 8
+           console.log(userInputUsername.value)
+        
+           if(userInputUsername.value == ""){
+                 registerStatusUsername = false
+                 console.log(registerStatusUsername)
+                 alert("Please input Username")
+
+           }else if(userInputUsername.value.length < 8){
+            registerStatusUsername = false
+            console.log(registerStatusUsername)
+            alert("Please Create Username Minimum of 8 character")
+           }
+           else{
+            // change to true
+            registerStatusUsername = true
+            console.log(registerStatusUsername)
+           }
+
+
+         //  check if password and confirm password is match and minimum of 8 character
+         if(userInputPasswordFirst.value.length < 8 ){
+          alert("Please create Password longer than 7 character")
+
+         }else if(userInputPasswordFirst.value != userInputPasswordConfirm.value){
+          alert("Please check your confirm password")
+         }else{
+              registerStatusPassword = true
+              console.log(registerStatusPassword)
+         }
+      
+         //  check if user check the check box
+         if (checkBox.checked) {
+          registerStatusCheckBox = true
+
+         } else {
+          registerStatusCheckBox = false
+          alert("Please Check the checkbox")
+         }
+
+            //  all check and no user error
+            if (registerStatusUsername == true &&
+                registerStatusPassword == true &&
+                registerStatusCheckBox == true
+            )
+            {
+              usernameCloud = userInputUsername.value
+              usernameCloudPass = userInputPasswordFirst.value
+              showPopup()
+             
+            }
+              
+            
+                    
+       // button click
+      })
+
+      function showPopup() {
+            // Display the popup and overlay
+            document.getElementById('popup').style.display = 'block';
+           
+          
+            
+            document.getElementById('successLoginId').onclick = ()=>{
+              window.location.href = 'login.html'
+
+               // api upload data 
+               const apiUrl = "https://sirarvin-back-end.onrender.com/api/students/add"; // Replace with your API endpoint
+                const data = {
+                    username: usernameCloud,
+                    password: usernameCloudPass
+                };
+
+                function addDataToCloud() {
+                    fetch(apiUrl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            console.error("Failed to add data. Status:", response.status, response.statusText);
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json(); // Parse the JSON response
+                    })
+                    .then(result => {
+                        console.log("Data added successfully:", result);
+                    })
+                    .catch(error => {
+                        console.error("Error while adding data:", error);
+                    });
+                }
+
+                // Call the function to add data
+                addDataToCloud();
+
+
+            }
+            
+        }
+
+        function closePopup() {
+            // Hide the popup and overlay
+            document.getElementById('popup').style.display = 'none';
+         
+        }
+
+        // api add data username add password
+        
+
+
+
+   </script>
 </body>
 </html>

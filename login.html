@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
+  <!-- start -->
   <div class="wrapper">
     <form action="#">
       <h2>Login</h2>
         <div class="input-field">
-        <input type="text" required>
+        <input type="text" required id="userEmailId">
         <label>Enter your email</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" required id="userPasswordId">
         <label>Enter your password</label>
       </div>
       <div class="forget">
@@ -26,11 +27,91 @@
         </label>
         <a href="#">Forgot password?</a>
       </div>
-      <button type="submit">Log In</button>
+      <button type="submit" id="loginId">Log In</button>
       <div class="register">
         <p>Don't have an account? <a href="register.html">Register</a></p>
       </div>
     </form>
   </div>
+  <div id="popup">
+    <p>Successfull registers!</p>
+    <button id="successLoginId">Proceed to Login Page</button>
+  </div>
+   <!-- end -->
+
+   <!-- start of js  --> 
+    <script>
+      const logInButton = document.getElementById('loginId')
+      logInButton.addEventListener('click',userlogin)
+
+
+      function userlogin() {
+        // get user login input
+
+        // user input username
+        const userInputUsername = document.getElementById('userEmailId').value
+        const userInputPassword = document.getElementById('userPasswordId').value
+        
+        // api request
+        const baseApiUrl = "https://sirarvin-back-end.onrender.com/api/students/username/";
+const username = userInputUsername; // Replace with the desired username
+
+function fetchUserData(username) {
+    const apiUrl = `${baseApiUrl}${username}`; // Construct URL dynamically
+
+    fetch(apiUrl, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            if (response.status === 404) {
+                console.error("Error 404: Resource not found");
+                alert("The requested user was not found. Please check the username.");
+            } else {
+                console.error(`Error ${response.status}: ${response.statusText}`);
+                alert("An error occurred while fetching data. Please try again later.");
+            }
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json(); // Parse JSON response
+    })
+    .then(data => {
+        console.log("Fetched User Data:", data);
+      window.location.href = 'dashboard.html'
+    })
+    .catch(error => {
+        console.error("Error while fetching user data:", error);
+        alert("A network error occurred. Please check your connection and try again.");
+    });
+}
+
+// Call the function with the username
+fetchUserData(username);
+
+
+      }
+
+
+
+
+
+
+      function showPopup() {
+            // Display the popup and overlay
+            document.getElementById('popup').style.display = 'block';
+            
+        }
+
+        function closePopup() {
+            // Hide the popup and overlay
+            document.getElementById('popup').style.display = 'none';
+         
+        }
+
+    </script>
+   <!-- end of js  -->
 </body>
 </html>
