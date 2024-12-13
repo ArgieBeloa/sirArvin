@@ -25,7 +25,7 @@ const contentDivSelector = '.content';
 homePageButton.addEventListener('click',()=> {
    
     // Load HTML
-    loadHTMLContent('homePage.html', contentDivSelector);
+    loadHTMLContentHomePage('homePage.html', contentDivSelector);
    
     imgElementHomePage.src = 'images/home.png'
     imgElementSchedule.src = 'images/schedule (1).png'
@@ -47,8 +47,9 @@ scheduleButton.addEventListener('click', function () {
     //   schedule fill icon
       imgElementSchedule.src = 'images/schedule.png'
     // Load HTML
-    loadHTMLContent('scedule.html', contentDivSelector);
-
+    loadHTMLContentSchedule('schedule.html');
+ 
+   
      
  
 });
@@ -66,7 +67,7 @@ remaindersButton.addEventListener('click', ()=>{
 
       // remainders fill icon
     imgElementRemainders.src = 'images/sticky-note.png'
-    loadHTMLContent('reminder.html', contentDivSelector);
+    loadHTMLContentReminders('reminder.html')
 })
 
 // events goals Button
@@ -80,9 +81,17 @@ goalsButton.addEventListener('click', ()=>{
 
     // fill Goal icon
     imgElementGoals.src = 'images/goal.png'
-    loadHTMLContent('goals.html', contentDivSelector);
+    loadHTMLContentGoals('goals.html')
 })
 
+// Load content on window load
+window.onload = function () {
+    //loadHTMLContent('scheduleTest1.html', '.content');
+
+        loadHTMLContentHomePage('homePage.html', contentDivSelector)
+       
+        
+};
 
 
 
@@ -100,8 +109,8 @@ goalsButton.addEventListener('click', ()=>{
 
 
 
-// Function to load HTML content and add event listeners
-function loadHTMLContent(file, targetSelector) {
+// Function to load HTML content home Page and add event listeners
+function loadHTMLContentHomePage(file, targetSelector) {
     fetch(file)
         .then(response => {
             if (!response.ok) throw new Error("Failed to load HTML file");
@@ -117,8 +126,8 @@ function loadHTMLContent(file, targetSelector) {
              target.dispatchEvent(contentAddedEvent);
 
                // Add event listeners to the dynamically loaded content
-             
-
+                const header = document.querySelector(".header")
+                 header.style.display = "block"
 
             
                /* start of schedule and data add*/
@@ -396,36 +405,13 @@ buttonIdNext.addEventListener('click', () => {
     container.appendChild(numberRow);
 
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            
       /* end of student  event and data add */
         })
         .catch(error => console.error("Error loading HTML:", error));
 }
 
-
-
-
-    
-
+// end of home page js
 
 
 
@@ -438,55 +424,128 @@ buttonIdNext.addEventListener('click', () => {
 
 
 
+// start of schedule js
+function loadHTMLContentSchedule(file) {
 
+    fetch(file)
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to load HTML file");
+            return response.text();
+        })
+        .then(data => {
+            const target = document.getElementById('contentId')
+            target.innerHTML = data;
+         // Trigger an event when the content is added
+          const contentAddedEvent = new CustomEvent("contentAdded", {
+           detail: { message: "HTML content loaded", file },
+        });
+             target.dispatchEvent(contentAddedEvent);
 
+                 // Add event schedule listeners to the dynamically loaded content
+                 const header = document.querySelector(".header")
+                 header.style.display = "none"
 
+                  //end of adding schedule custom event
 
+        })
+        .catch(error => console.error("Error loading HTML:", error));
 
-
-
-
-
-
-
-
-/// Function to update the circle fill and percentage text
-function updateCircleFill(percentage) {
-    const circle = document.querySelector(".circle");
-    const circlePercentage = document.querySelector(".circle-percentage");
-
-    // Check if elements exist in the DOM before trying to update
-    if (!circle) {
-        console.error("Circle element not found in the DOM");
-        return;
-    }
-
-    if (!circlePercentage) {
-        console.error("Circle Percentage element not found in the DOM");
-        return;
-    }
-
-   
-    circlePercentage.innerHTML = `${percentage}%`;
+        // end of function LoadContentHomePage
 }
 
-// Listen for the custom 'contentAdded' event to trigger updates when the content is loaded
-document.querySelector('.content').addEventListener('contentAdded', (event) => {
-    console.log(event.detail.message); // Logs "HTML content loaded"
 
-    // Initial percentage value
-    let percentage = 70;
-    updateCircleFill(percentage);
+// Start of Reminders JS
+function loadHTMLContentReminders(file) {
 
-    // Example: Update the circle to 90% after 2 seconds
-    // setTimeout(() => {
-    //     percentage = 90; // Change percentage dynamically
-    //     updateCircleFill(percentage);
-    // }, 2000);
-});
+    fetch(file)
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to load HTML file");
+            return response.text();
+        })
+        .then(data => {
+            const target = document.getElementById('contentId')
+            target.innerHTML = data;
+         // Trigger an event when the content is added
+          const contentAddedEvent = new CustomEvent("contentAdded", {
+           detail: { message: "HTML content loaded", file },
+        });
+             target.dispatchEvent(contentAddedEvent);
 
-// Load content on window load
-window.onload = function () {
-    loadHTMLContent('homePage.html', '.content');
+                 // Add event schedule listeners to the dynamically loaded content
+                 
+                  const header = document.querySelector(".header")
+                        header.style.display = "none"
+                  //end of adding schedule custom event
+
+        })
+        .catch(error => console.error("Error loading HTML:", error));
+
+        // end of function LoadContentHomePage
+}
+
+// end of Reminders JS
+
+
+
+// Start of Goals JS
+function loadHTMLContentGoals(file) {
+
+    fetch(file)
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to load HTML file");
+            return response.text();
+        })
+        .then(data => {
+            const target = document.getElementById('contentId')
+            target.innerHTML = data;
+         // Trigger an event when the content is added
+          const contentAddedEvent = new CustomEvent("contentAdded", {
+           detail: { message: "HTML content loaded", file },
+        });
+             target.dispatchEvent(contentAddedEvent);
+
+                 // Add event schedule listeners to the dynamically loaded content
+                 
+                  const header = document.querySelector(".header")
+                        header.style.display = "none"
+                  //end of adding schedule custom event
+
+        })
+        .catch(error => console.error("Error loading HTML:", error));
+
+        // end of function LoadContentHomePage
+}
+
+// end of Goals JS
+
+
+
+
+
     
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
